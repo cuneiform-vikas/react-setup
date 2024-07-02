@@ -1,0 +1,73 @@
+@import "./mixins";
+
+$xs: 0px;
+$sm: 575px;
+$md: 767px;
+$lg: 1023px;
+$xl: 1199px;
+$xxl: 1439px;
+$xxxl: 1639px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1440px,
+);
+
+$font-arial: "Arial Rounded MT Std";
+$font-gilroy: "Gilroy";
+
+$primary: #1a6fef;
+$secondary: #157918;
+$danger: #e62200;
+$light: #f4f4f4;
+$dark: #0e1326;
+$white: #ffffff;
+$black: #000000;
+$grey: #666666;
+
+$body-font-family: $font-gilroy;
+$body-color: $grey;
+
+$body-font-size: 18px;
+$body-line-height: 24px;
+
+$body-font-size-xl: 14px;
+$body-line-height-xl: 20px;
+
+$body-font-size-lg: 14px;
+$body-line-height-lg: 20px;
+
+$small-font-size: 14px;
+$small-line-height: 20px;
+
+$h1-font-size: 36px;
+$h2-font-size: 34px;
+$h3-font-size: 32px;
+$h4-font-size: 26px;
+$h5-font-size: 24px;
+$h6-font-size: 18px;
+
+$h1-line-height: 42px;
+$h2-line-height: 40px;
+$h3-line-height: 38px;
+$h4-line-height: 32px;
+$h5-line-height: 30px;
+$h6-line-height: 28px;
+
+$h1-font-weight: 800;
+$h2-font-weight: bold;
+$h3-font-weight: bold;
+$h4-font-weight: bold;
+$h5-font-weight: bold;
+$h6-font-weight: bold;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
