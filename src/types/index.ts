@@ -86,3 +86,15 @@ export type InvoiceForm = {
   amount: number;
   status: "pending" | "paid";
 };
+
+export interface IAuthState {
+  authLoading: boolean;
+  token: String | null;
+  email: String;
+  userList: any
+}
+
+export interface loginData {
+  email: String;
+  password: String
+}
