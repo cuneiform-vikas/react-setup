@@ -2,6 +2,7 @@ const setupAxios = (axios: any, store: any) => {
   axios.interceptors.request.use(
     (config: any) => {
       const { auth } = store.getState();
+
       if (auth) {
         config.headers.Authorization = `Bearer ${auth.token}`;
         config.headers.AccessKey = process.env.ACCESS_KEY;

@@ -3,19 +3,20 @@ import axios from "axios";
 import { loginData } from "../../../types";
 import { toast } from "react-toastify";
 
-export const login = createAsyncThunk(
+export const login: any = createAsyncThunk(
     "auth/login",
-    async (data: loginData, { rejectWithValue, fulfillWithValue, dispatch }: any) => {
+    async (data: any, { rejectWithValue, fulfillWithValue, dispatch }: any) => {
         try {
+            console.log("object")
             const response = await axios({
                 method: "POST",
-                url: `api/auth/login`,
+                url: `http://localhost:3001/api/auth/login`,
                 data: data,
                 headers: {
                     "Content-Type": "application/json",
                 },
             });
-
+            console.log('response: ', response);
             if (response.status === 200) {
                 toast.success(response?.data?.message);
                 return fulfillWithValue(response?.data);
@@ -29,10 +30,11 @@ export const login = createAsyncThunk(
     }
 );
 
-export const getUserList = createAsyncThunk(
+export const getUserList: any = createAsyncThunk(
     "user/get-userlist",
-    async ({ rejectWithValue, fulfillWithValue, dispatch }: any) => {
+    async (data: any, { rejectWithValue, fulfillWithValue, dispatch }: any) => {
         try {
+
             const response = await axios({
                 method: "GET",
                 url: `https://dummyjson.com/users`,
@@ -41,8 +43,10 @@ export const getUserList = createAsyncThunk(
                 },
             });
 
+
+            console.log('response: ', response);
             if (response.status === 200) {
-                return fulfillWithValue(response?.data);
+                return fulfillWithValue(response?.data?.users);
             } else {
                 return rejectWithValue();
             }

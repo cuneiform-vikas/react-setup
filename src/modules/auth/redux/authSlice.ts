@@ -1,12 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { ActionReducerMapBuilder, PayloadAction } from "@reduxjs/toolkit";
 import { IAuthState } from "../../../types";
 import { getUserList, login } from "./authApi";
 
-const initialState: IAuthState = {
-    authLoading: false,
+const initialState = {
+    loadingState: false,
     token: null,
-    email: "",
     userList: []
 };
 
@@ -14,44 +12,35 @@ const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
-        isAuthLoadingToggle: (state, action) =>
-        (state = {
-            ...state,
-            authLoading: action.payload,
-        }),
-        setUseremail: (state, action) =>
-        (state = {
-            ...state,
-            email: action.payload,
-        }),
         defaultLogout: (state, action) =>
         (state = {
             ...state,
-            authLoading: false,
+            loadingState: false,
             token: null,
         }),
     },
-    extraReducers: (builder: ActionReducerMapBuilder<IAuthState>) => {
+    extraReducers: (builder) => {
         builder.addCase(login.pending, (state, action) => {
-            state.authLoading = true;
+            state.loadingState = true;
         });
-        builder.addCase(login.fulfilled, (state, action: PayloadAction<any>) => {
+        builder.addCase(login.fulfilled, (state, action) => {
             state.token = action.payload.token;
         });
         builder.addCase(login.rejected, (state, action) => {
-            state.authLoading = false;
+            state.loadingState = false;
         });
         builder.addCase(getUserList.pending, (state, action) => {
-            state.authLoading = true;
+            state.loadingState = true;
         });
-        builder.addCase(getUserList.fulfilled, (state, action: PayloadAction<any>) => {
+        builder.addCase(getUserList.fulfilled, (state, action) => {
             state.userList = action.payload;
+            state.loadingState = false;
         });
         builder.addCase(getUserList.rejected, (state, action) => {
-            state.authLoading = false;
+            state.loadingState = false;
         });
     }
 });
 
-export const { isAuthLoadingToggle } = authSlice.actions;
+export const { defaultLogout } = authSlice.actions;
 export default authSlice.reducer;
