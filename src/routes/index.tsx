@@ -18,8 +18,8 @@ interface AuthState {
 
 interface RouteConfig {
   path: string;
-  component: React.ComponentType<any>; // Adjust as per your component props
-  position: "head" | "parent" | "child"; // Adjust positions as needed
+  component: React.ComponentType<any>;
+  position: "head" | "parent" | "child";
   privilegeTag?: any;
 }
 
@@ -34,7 +34,6 @@ const Index: React.FC = () => {
   );
 
   const token: any = true;
-  console.log("token: ", token);
 
   const privileges: any = {
     // head: ["read", "write", "delete"],
@@ -62,7 +61,7 @@ const Index: React.FC = () => {
         </Routes>
       ) : (
         <Routes>
-          {/* Common Routes */}
+          {/* ----------------------------------COMMON ROUTES----------------------------------------- */}
           {CommonRoutes?.map((obj, index) => (
             <Route
               key={index}
@@ -71,7 +70,8 @@ const Index: React.FC = () => {
             />
           ))}
 
-          {/* Routes accessible only if not authenticated */}
+          {/* ----------------------------------ROUTES ACCESSIBLE JUST FOR AUTH ----------------------------------------- */}
+
           {!token && <Route path="/" element={<Navigate to="/login" />} />}
           {AuthRoutes?.map((obj, index) => (
             <Route
@@ -87,7 +87,8 @@ const Index: React.FC = () => {
             />
           ))}
 
-          {/* Role Based Routing */}
+          {/* ----------------------------------Role Based Routing----------------------------------------- */}
+
           {token &&
             module?.map((obj, index): any => (
               <Route
