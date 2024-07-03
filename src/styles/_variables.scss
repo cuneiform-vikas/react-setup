@@ -1,5 +1,6 @@
 @import "./mixins";
 
+// Breakpoints
 $xs: 0px;
 $sm: 575px;
 $md: 767px;
@@ -17,9 +18,7 @@ $grid-breakpoints: (
   xxl: 1440px,
 );
 
-$font-arial: "Arial Rounded MT Std";
-$font-gilroy: "Gilroy";
-
+// Colors
 $primary: #1a6fef;
 $secondary: #157918;
 $danger: #e62200;
@@ -29,17 +28,54 @@ $white: #ffffff;
 $black: #000000;
 $grey: #666666;
 
-$body-font-family: $font-gilroy;
-$body-color: $grey;
+/* Background and White */
+$color-background: #fafdff;
+$color-white: #fff;
 
-$body-font-size: 18px;
+/* Primary Colors */
+$color-primary-10: #f5fbff;
+$color-primary-20: #ebf7ff;
+$color-primary-30: #ccecff;
+$color-primary-40: #0094eb;
+$color-primary-50: #0076bb;
+$color-primary-60: #004d7a;
+
+/* Secondary Colors */
+$color-secondary-10: #effbf4;
+$color-secondary-20: #effbf4;
+$color-secondary-30: #238f51;
+$color-secondary-40: #17693b;
+
+/* Tertiary Colors */
+$color-tertiary-10: #fcedef;
+$color-tertiary-20: #e86973;
+$color-tertiary-30: #e13d4a;
+$color-tertiary-40: #d0202e;
+$color-tertiary-50: #af1c29;
+
+/* Neutral Colors */
+$color-neutral-10: #fafafa;
+$color-neutral-20: #e6e6e6;
+$color-neutral-40: #8c8c8c;
+$color-neutral-50: #595959;
+$color-neutral-60: #454545;
+$color-neutral-70: #333333;
+$color-neutral-80: #2a3547;
+$color-neutral-90: #262626;
+$color-neutral-100: #252525;
+
+// Typography
+$font-primary: "Baskervville SC", serif;
+$font-secondary: "Poppins", sans-serif;
+
+$body-font-size: 16px;
 $body-line-height: 24px;
 
-$body-font-size-xl: 14px;
-$body-line-height-xl: 20px;
+$body-font-size-lg: 18px;
+$body-line-height-lg: 24px;
 
-$body-font-size-lg: 14px;
-$body-line-height-lg: 20px;
+$body-font-size-xl: 20px;
+$body-line-height-xl: 28px;
 
 $small-font-size: 14px;
 $small-line-height: 20px;
