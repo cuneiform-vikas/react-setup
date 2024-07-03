@@ -1,7 +1,7 @@
-import "./styles/index.scss";
 import { useEffect, useState } from "react"
 import { getUserList } from "./modules/auth/redux/authApi"
 import { shallowEqual, useDispatch, useSelector } from "react-redux"
+import "./styles/index.scss";
 
 export default function App() {
 
