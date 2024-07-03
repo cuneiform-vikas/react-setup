@@ -4,24 +4,7 @@ import { useSelector, shallowEqual } from "react-redux";
 import { CommonRoutes } from "./role/CommonRoutes";
 import { MainRoutes } from "./role/MainRoutes";
 import { AuthRoutes } from "./role/AuthRoutes";
-
-interface AuthState {
-  maintenance: boolean;
-  // privileges: { [key: string]: string[] };
-  privileges: any;
-  // token: string | null;
-  token: any;
-  role: number;
-  is_2fa: boolean;
-  is_verify: boolean;
-}
-
-interface RouteConfig {
-  path: string;
-  component: React.ComponentType<any>;
-  position: "head" | "parent" | "child";
-  privilegeTag?: any;
-}
+import { AuthState, RouteConfig } from "@/types";
 
 const Index: React.FC = () => {
   const [title, setTitle] = useState<string>("Set Up");
