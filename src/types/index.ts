@@ -14,4 +14,6 @@ export interface loginData {
   password: string;
 }
 
+export type Pokemon = any
+
 export type uid = any;
