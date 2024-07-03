@@ -7,7 +7,7 @@ import { AuthRoutes } from "./role/AuthRoutes";
 import { AuthState, RouteConfig } from "@/types";
 
 const Index: React.FC = () => {
-  const [title, setTitle] = useState<string>("Set Up");
+  const [title, setTitle] = useState<string>("React Set Up");
   const [maintenanceStatus, setMaintenanceStatus] = useState<boolean>(false);
   document.title = title;
 
