@@ -1,7 +1,6 @@
-// import { MainRoutes } from "@/routes/role/MainRoutes";
-// import { AuthState, RouteConfig } from "@/types";
-// import { useEffect, useState } from "react";
-// import { shallowEqual, useSelector } from "react-redux";
+import { AuthState, RouteConfig } from "@/types";
+import { useEffect, useState } from "react";
+import { shallowEqual, useSelector } from "react-redux";
 import ForgotPass from "modules/auth/pages/ForgotPass";
 import Login from "modules/auth/pages/Login";
 import ResetPass from "modules/auth/pages/ResetPass";
@@ -109,6 +108,33 @@ import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
 //   );
 // };
 const AuthLayout = () => {
+  const [title, setTitle] = useState<string>("React | Flow");
+  const [maintenanceStatus, setMaintenanceStatus] = useState<boolean>(false);
+
+  document.title = title;
+
+  const { maintenance, is_2fa, is_verify }: AuthState = useSelector(
+    (state: any) => state.auth,
+    shallowEqual
+  );
+
+  const token: any = true;
+
+  const privileges: any = {
+    head: ["read", "write", "delete"],
+    user_management: ["read", "write", "delete"],
+  };
+
+  const role: number = 2;
+  const module: RouteConfig[] = role === 1 || role === 2 ? MainRoutes : [];
+
+  console.log("module: ", module);
+
+  useEffect(() => {
+    if (maintenance) {
+      setMaintenanceStatus(maintenance);
+    }
+  }, [maintenance]);
   return (
     <div className="container">
       <div className="auth-container">

@@ -1,15 +1,11 @@
-import Register from "@/modules/auth/pages/Register";
 import Login from "@/modules/auth/pages/Login";
+import Register from "@/modules/auth/pages/Register";
 
-interface RouteConfig {
-  path: string;
-  component: any;
-}
 
 export const AuthRoutes: RouteConfig[] = [
   {
     path: "/login",
-    component: Login,
+    ele: Login,
   },
   {
     path: "/register",
