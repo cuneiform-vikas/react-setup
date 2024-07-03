@@ -1,13 +1,13 @@
+import { loginData } from "@/types";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { loginData } from "../../../types";
 import { toast } from "react-toastify";
 
 export const login: any = createAsyncThunk(
     "auth/login",
-    async (data: any, { rejectWithValue, fulfillWithValue, dispatch }: any) => {
+    async (data: loginData, { rejectWithValue, fulfillWithValue, dispatch }: any) => {
         try {
-            console.log("object")
+
             const response = await axios({
                 method: "POST",
                 url: `http://localhost:3001/api/auth/login`,
@@ -16,6 +16,7 @@ export const login: any = createAsyncThunk(
                     "Content-Type": "application/json",
                 },
             });
+
             console.log('response: ', response);
             if (response.status === 200) {
                 toast.success(response?.data?.message);
@@ -42,8 +43,6 @@ export const getUserList: any = createAsyncThunk(
                     "Content-Type": "application/json",
                 },
             });
-
-
             console.log('response: ', response);
             if (response.status === 200) {
                 return fulfillWithValue(response?.data?.users);

@@ -1,23 +1,25 @@
-import { configureStore } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
-import persistReducer from "redux-persist/es/persistReducer";
-import rootReducer from "./rootReducer";
-import { persistStore } from "redux-persist";
+import { Tuple, configureStore } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer, persistStore } from 'redux-persist';
+import rootReducer from './rootReducer';
+import { encryptTransform } from 'redux-persist-transform-encrypt';
+import { thunk } from "redux-thunk";
 
-const persistConfig = {
-  key: "auth",
-  storage: storage,
-  whitelist: ["auth"],
-  blacklist: [],
+
+const persistConfig: any = {
+  key: 'auth',
+  storage,
+  whitelist: ['auth'],
+  transforms: [encryptTransform({ secretKey: 'my-secret-key' })],
 };
 
 const pReducer = persistReducer(persistConfig, rootReducer);
+
 const store = configureStore({
   reducer: pReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }),
+  middleware: () => new Tuple(thunk),
 });
 
-const persistor = persistStore(store);
+const persistor: any = persistStore(store);
 
 export { store, persistor };

@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IAuthState } from "../../../types";
 import { getUserList, login } from "./authApi";
+import { IAuthState } from "@/types";
 
-const initialState = {
+const initialState: IAuthState = {
     loadingState: false,
     token: null,
     userList: []
