@@ -1,7 +1,5 @@
-@import "./mixins";
-
 // Breakpoints
-$xs: 0px;
+$xs: 0;
 $sm: 575px;
 $md: 767px;
 $lg: 1023px;
@@ -17,16 +15,6 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1440px,
 );
-
-// Colors
-$primary: #1a6fef;
-$secondary: #157918;
-$danger: #e62200;
-$light: #f4f4f4;
-$dark: #0e1326;
-$white: #ffffff;
-$black: #000000;
-$grey: #666666;
 
 /* Background and White */
 $color-background: #fafdff;

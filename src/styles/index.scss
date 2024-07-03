@@ -1,5 +1,7 @@
-@import "./mixins";
-@import "./variables";
+@import "./base";
+@import "./components";
+@import "./layout/";
+@import "./pages";
 
 *,
 *:after,
@@ -20,7 +22,7 @@ body {
   margin: 0;
   user-select: none;
   font-family: $font-secondary;
-  background: $white none no-repeat scroll top center;
+  background: $color-white none no-repeat scroll top center;
   background-size: contain;
   color: $color-neutral-90;
   font-size: $body-font-size;
