@@ -1,5 +1,5 @@
-import Register from "@/modules/auth/pages/Register";
-import Login from "@/modules/auth/pages/Login";
+import Login from "modules/auth/pages/Login";
+import Register from "modules/auth/pages/Register";
 
 interface RouteConfig {
   path: string;

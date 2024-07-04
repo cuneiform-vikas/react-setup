@@ -6,7 +6,7 @@ import { MainRoutes } from "./role/MainRoutes";
 import { AuthRoutes } from "./role/AuthRoutes";
 import { AuthState, RouteConfig } from "@/types";
 
-const Index: React.FC = () => {
+const Router: React.FC = () => {
   const [title, setTitle] = useState<string>("React Set Up");
   const [maintenanceStatus, setMaintenanceStatus] = useState<boolean>(false);
   document.title = title;
@@ -104,4 +104,4 @@ const Index: React.FC = () => {
   );
 };
 
-export default Index;
+export default Router;
