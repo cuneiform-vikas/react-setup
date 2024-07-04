@@ -4,7 +4,7 @@ import { useSelector, shallowEqual } from "react-redux";
 import { CommonRoutes } from "./role/CommonRoutes";
 import { MainRoutes } from "./role/MainRoutes";
 import { AuthRoutes } from "./role/AuthRoutes";
-import { AuthState, RouteConfig } from "@/types";
+import { AuthState, RouteConfig } from "types";
 
 const Router: React.FC = () => {
   const [title, setTitle] = useState<string>("React Set Up");
@@ -25,7 +25,6 @@ const Router: React.FC = () => {
 
   const role: number = 2;
   const module: RouteConfig[] = role === 1 || role === 2 ? MainRoutes : [];
-  console.log("module: ", module);
 
   useEffect(() => {
     if (maintenance) {
