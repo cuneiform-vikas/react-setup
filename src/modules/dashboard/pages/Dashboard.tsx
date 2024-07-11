@@ -1,11 +1,12 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import ToggleComponent from "../components/ToggleComponent";
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="container">
       <div>Dashboard</div>
       <Link to="/user">User</Link>
+      <ToggleComponent />
     </div>
   );
 };

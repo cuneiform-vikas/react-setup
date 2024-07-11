@@ -1,7 +1,7 @@
-import AddUser from "../../modules/user/pages/AddUser";
-import User from "../../modules/user/pages/User";
-import EditUser from "../../modules/user/pages/EditUser";
-import Dashboard from "../../modules/dashboard/pages/Dashboard";
+import Dashboard from "modules/dashboard/pages/Dashboard";
+import AddUser from "modules/user/pages/AddUser";
+import EditUser from "modules/user/pages/EditUser";
+import User from "modules/user/pages/User";
 
 interface RouteConfig {
   path: string;

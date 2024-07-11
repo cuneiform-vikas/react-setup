@@ -17,7 +17,6 @@ export const login: any = createAsyncThunk(
                 },
             });
 
-            console.log('response: ', response);
             if (response.status === 200) {
                 toast.success(response?.data?.message);
                 return fulfillWithValue(response?.data);
@@ -43,7 +42,6 @@ export const getUserList: any = createAsyncThunk(
                     "Content-Type": "application/json",
                 },
             });
-            console.log('response: ', response);
             if (response.status === 200) {
                 return fulfillWithValue(response?.data?.users);
             } else {

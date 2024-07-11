@@ -1,7 +1,5 @@
-import { loginData } from "@/types";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { toast } from "react-toastify";
 
 export const getUserList: any = createAsyncThunk(
   "user/get-userlist",
@@ -14,7 +12,6 @@ export const getUserList: any = createAsyncThunk(
           "Content-Type": "application/json",
         },
       });
-      console.log("response: ", response);
       if (response.status === 200) {
         return fulfillWithValue(response?.data?.users);
       } else {

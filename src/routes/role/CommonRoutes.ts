@@ -1,4 +1,4 @@
-import Error from ".././../common/Error";
+import Error from "common/Error";
 
 interface RouteConfig {
   path: string;

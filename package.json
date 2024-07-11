@@ -22,14 +22,13 @@
     "react-toastify": "^10.0.5",
     "redux-persist": "^6.0.0",
     "redux-persist-transform-encrypt": "^5.1.1",
+    "sass": "^1.77.6",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:staging": "env-cmd -f .env.staging.local react-scripts start ",
-    "build": "react-scripts build",
-    "build:staging": "env-cmd -f .env.staging.local react-scripts build ",
+    "start": "env-cmd -f .env.development.local react-scripts start",
+    "build": "env-cmd -f .env.production.local react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
