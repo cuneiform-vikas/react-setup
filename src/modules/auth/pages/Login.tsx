@@ -1,8 +1,8 @@
-import React from 'react'
-
 const Login = () => {
   return (
-    <div>Login</div>
+    <div className='m4'>
+      {process.env.REACT_APP_MODE}
+      Login asd</div>
   )
 }
 

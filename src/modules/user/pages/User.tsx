@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getUserList } from "../../auth/redux/authApi";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { getUserList } from "@/modules/auth/redux/authApi";
 
 const User = () => {
   const [users, setUsers] = useState([]);
